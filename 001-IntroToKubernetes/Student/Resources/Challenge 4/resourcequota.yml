@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-quota
+  namespace: quota-test
+spec:
+  hard:
+    limits.cpu: x
+    limits.memory: x
+    pods: x
+    requests.cpu: x
+    requests.memory: x
