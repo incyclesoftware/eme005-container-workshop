@@ -138,7 +138,7 @@ Start Minikube and enable the metrics server addon:
 ```
 minikube start
 minikube addons enable metrics-server
-stop
+minikube stop
 minikube start
 ```
 This command starts a local Kubernetes cluster.
