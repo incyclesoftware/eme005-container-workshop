@@ -43,17 +43,17 @@ This changes to your user's home directory.
 #### Install NodeJS
 The applications we'll be containerizing are NodeJS applications. We won't be writing any code, but being able to run the applications will be useful so we can see how they *should* behave before we containerize them.
 
-```
-sudo apt install nodejs
-```
-
-#### Setting up package dependencies
-
 Update your package lists and upgrade existing packages:
 ```
 sudo apt update && sudo apt upgrade -y
 ```
 This ensures your system has the latest package information and upgrades all installed packages.
+
+```
+sudo apt install nodejs
+```
+
+#### Setting up package dependencies
 
 Install necessary dependencies for adding Docker's repository:
 ```
