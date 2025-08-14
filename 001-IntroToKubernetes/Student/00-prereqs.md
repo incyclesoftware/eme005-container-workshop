@@ -148,6 +148,15 @@ Set Minikube to share the docker daemon with your docker installation:
 eval $(minikube docker-env).
 ```
 
+You can check the status of Minikube by running `minikube status`. You should see something that looks like this:
+
+> minikube
+> type: Control Plane
+> host: Running
+> kubelet: Running
+> apiserver: Running
+> kubeconfig: Configured
+
 #### Installing Helm
 
 Helm is a package manager for Kubernetes that helps you manage Kubernetes applications:
