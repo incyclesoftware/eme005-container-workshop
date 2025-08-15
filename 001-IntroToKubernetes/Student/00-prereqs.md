@@ -139,13 +139,20 @@ Start Minikube and enable the metrics server addon:
 minikube start
 minikube addons enable metrics-server
 minikube stop
-minikube start
 ```
-This command starts a local Kubernetes cluster.
+This command configures a local Kubernetes cluster.
 
 Set Minikube to share the docker daemon with your docker installation:
 ```
 eval $(minikube docker-env).
+```
+
+Note that you'll have to run this command before you start Minikube every time.
+
+Then restart Minikube:
+
+```
+minikube start
 ```
 
 You can check the status of Minikube by running `minikube status`. You should see something that looks like this:
@@ -156,6 +163,22 @@ You can check the status of Minikube by running `minikube status`. You should se
 > kubelet: Running
 > apiserver: Running
 > kubeconfig: Configured
+
+If type `docker images`, you'll see something like this, which includes all of the containers used by Minikube:
+
+```
+REPOSITORY                                      TAG        IMAGE ID       CREATED         SIZE
+registry.k8s.io/kube-apiserver                  v1.33.1    c6ab243b29f8   3 months ago    102MB
+registry.k8s.io/kube-controller-manager         v1.33.1    ef43894fa110   3 months ago    94.6MB
+registry.k8s.io/kube-scheduler                  v1.33.1    398c985c0d95   3 months ago    73.4MB
+registry.k8s.io/kube-proxy                      v1.33.1    b79c189b052c   3 months ago    97.9MB
+registry.k8s.io/etcd                            3.5.21-0   499038711c08   4 months ago    153MB
+registry.k8s.io/coredns/coredns                 v1.12.0    1cf5f116067c   8 months ago    70.1MB
+busybox                                         latest     0ed463b26dae   10 months ago   4.43MB
+registry.k8s.io/metrics-server/metrics-server   <none>     48d9cfaaf390   11 months ago   67.1MB
+registry.k8s.io/pause                           3.10       873ed7510279   14 months ago   736kB
+gcr.io/k8s-minikube/storage-provisioner         v5         6e38f40d628d   4 years ago     31.5MB
+```
 
 #### Installing Helm
 
